@@ -6,6 +6,7 @@ import Col from "../col";
 import ContainerFluid from "../container-fluid";
 import Row from "../row";
 import Logo from "../../src/assets/img/primary.png";
+import Info from "../info-plan";
 
 function Header({}) {
   return (
@@ -35,6 +36,7 @@ function Header({}) {
                   <a>PROGRESS</a>
                 </Link>
               </nav>
+              <Info />
             </div>
           </Col>
         </Row>
