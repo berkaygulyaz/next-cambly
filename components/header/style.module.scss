@@ -11,28 +11,4 @@
         font-family: $pt-sans;
         height: 64px;
     }
-    .navbar {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        a {
-            box-sizing: border-box;
-            color: $color-carbon;
-            flex-shrink: 0;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 700;
-            max-width: 264px;
-            min-width: 72px;
-            opacity: 0.6;
-            overflow: hidden;
-            padding: 6px 12px;
-            position: relative;
-            text-align: center;
-            text-decoration: none;
-            white-space: normal;
-        }
-    }
 }

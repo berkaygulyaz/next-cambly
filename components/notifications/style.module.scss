@@ -1,0 +1,41 @@
+@import '../../src/assets/common/variables';
+
+.notification {
+    margin: 0 10px;
+    position: relative;
+    .bell {
+        cursor: pointer;
+    }
+
+    .notificationInfo {
+        background-color: $color-white;
+        display: flex;
+        flex-direction: row;
+        left: -200px;
+        padding: 10px;
+        position: absolute;
+        top: 40px;
+        width: 250px;
+    }
+
+    .notificationText {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    span {
+        font-size: 18px;
+        font-family: inherit;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    p{
+        color: $color-black;
+        margin: 0;
+        opacity: .5;
+    }
+}

@@ -7,6 +7,9 @@ import ContainerFluid from "../container-fluid";
 import Row from "../row";
 import Logo from "../../src/assets/img/primary.png";
 import Info from "../info-plan";
+import Nav from "../nav";
+import Notifications from "../notifications";
+import CalendarInfo from "../calendar-info";
 
 function Header({}) {
   return (
@@ -25,18 +28,10 @@ function Header({}) {
                   />
                 </a>
               </Link>
-              <nav className={styles.navbar}> 
-                <Link href="/tutors">
-                  <a>TUTORS</a>
-                </Link>
-                <Link href="/courses">
-                  <a>COURSES</a>
-                </Link>
-                <Link href="/history">
-                  <a>PROGRESS</a>
-                </Link>
-              </nav>
+              <Nav />
               <Info />
+              <Notifications />
+              <CalendarInfo />
             </div>
           </Col>
         </Row>

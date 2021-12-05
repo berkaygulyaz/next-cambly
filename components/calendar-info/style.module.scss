@@ -1,0 +1,28 @@
+@import '../../src/assets/common/variables';
+.calendar {
+    margin: 0 10px;
+
+    .calendarIcon {
+        cursor: pointer;
+    }
+
+    .calendarInfo {
+        position: absolute;
+        width: 315px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menuTitle {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        a{
+            color: $color-black;
+            opacity: .5;
+            text-decoration: none;
+            font-size: 13px;
+        }
+    }
+}
