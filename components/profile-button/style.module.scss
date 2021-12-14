@@ -1,0 +1,30 @@
+@import '../../src/assets/common/variables';
+
+.profile {
+    margin: 0 15px;
+    position: relative;
+
+    img {
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    .settingsMenu {
+        flex-direction: column;
+        left: -160px;
+        position: absolute;
+        width: 200px;
+        width: 200px;
+    }
+
+    .menuItem {
+        font-size: 14px;
+        min-height: auto;
+        font-family: inherit;
+        font-weight: 400;
+        line-height: 1.43;
+        text-decoration: none;
+        color: $color-carbon;
+        padding: 5px;
+    }
+}

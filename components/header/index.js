@@ -10,6 +10,7 @@ import Info from "../info-plan";
 import Nav from "../nav";
 import Notifications from "../notifications";
 import CalendarInfo from "../calendar-info";
+import ProfileButton from "../profile-button"
 
 function Header({}) {
   return (
@@ -32,6 +33,7 @@ function Header({}) {
               <Info />
               <Notifications />
               <CalendarInfo />
+              <ProfileButton />
             </div>
           </Col>
         </Row>
