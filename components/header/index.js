@@ -19,21 +19,25 @@ function Header({}) {
         <Row>
           <Col>
             <div className={styles.headerWrapper}>
-              <Link href="/">
-                <a className="logo">
-                  <Image
-                    src={Logo}
-                    alt="Cambly Logo"
-                    width={140}
-                    height={40}
-                  />
-                </a>
-              </Link>
-              <Nav />
-              <Info />
-              <Notifications />
-              <CalendarInfo />
-              <ProfileButton />
+              <div className={styles.leftSide}>
+                <Link href="/">
+                  <a className="logo">
+                    <Image
+                      src={Logo}
+                      alt="Cambly Logo"
+                      width={140}
+                      height={40}
+                    />
+                  </a>
+                </Link>
+                <Nav />
+              </div>
+              <div className={styles.rightSide}>
+                <Info />
+                <Notifications />
+                <CalendarInfo />
+                <ProfileButton />
+              </div>
             </div>
           </Col>
         </Row>

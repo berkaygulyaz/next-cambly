@@ -10,5 +10,15 @@
         flex-direction: row;
         font-family: $pt-sans;
         height: 64px;
+        justify-content: space-between;
+    }
+
+    .leftSide {
+        display: flex;
+    }
+
+    .rightSide {
+        display: flex;
+        align-items: center;
     }
 }

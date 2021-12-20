@@ -1,6 +1,7 @@
 @import '../../src/assets/common/variables';
 .calendar {
     margin: 0 10px;
+    position: relative;
 
     .calendarIcon {
         cursor: pointer;
@@ -11,6 +12,7 @@
         width: 315px;
         display: flex;
         flex-direction: column;
+        left: -300px;
     }
 
     .menuTitle {
