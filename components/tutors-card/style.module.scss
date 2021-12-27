@@ -1,0 +1,51 @@
+@import '../../src/assets/common/variables';
+
+.cardsWrapper {
+    margin: 30px 0;
+
+    .cards {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between; 
+    }
+
+    .card {
+        margin-bottom: 20px;
+        max-width: 32.5%;
+        min-width: 370px;
+        flex-grow: 1;
+        border: 1px solid rgb(221, 221, 221);
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-family: $pt-sans;
+    }
+
+    .cardHeader {
+        display: flex;
+        flex-direction: row;
+        padding: 16px;
+    }
+
+    .headerAvatar {
+        border-radius: 15px;
+    }
+
+    .cardheaderContent {
+        flex: 1 1 auto;
+        padding-left: 20px;
+    }
+
+    .cardheaderTitle {
+        font-size: 18.5px;
+        line-height: 22px;
+        padding-right: 50px;
+        font-weight: 600;
+    }
+
+    .subHeader {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+}
