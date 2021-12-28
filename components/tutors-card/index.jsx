@@ -46,9 +46,12 @@ function tutorsCard({}) {
                 <div className={styles.cardContent}>
                   <p className={styles.contentText}>Architect- ESL teacher</p>
                 </div>
-                <Link href="/">
-                    <a className={styles.cardBtn}>PROFILE</a>
-                </Link>
+                <div className={styles.cardBtnWrapper}>
+                  <Link href="/">
+                      <a className={styles.cardBtn}>PROFILE</a>
+                  </Link>
+
+                </div>
               </div>
             </div>
           </Col>
