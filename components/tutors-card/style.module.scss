@@ -27,6 +27,8 @@
     padding: 16px;
     .headerAvatar {
       border-radius: 15px;
+      width: 100px;
+      height: 100px;
     }
     .cardheaderContent {
       flex: 1 1 auto;
@@ -42,11 +44,33 @@
 
   .subHeader {
     margin-top: 10px;
+    .badge {
+      height: 32px;
+      width: 32px;
+      margin-right: 5px;
+    }
     .location {
       display: flex;
       align-items: center;
       font-size: 12px;
       color: $color-steel-wool;
+    }
+
+    .tutorsSpecialInfo {
+      display: flex;
+    }
+
+    .infoCard {
+      margin-top: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 12px;
+      text-overflow: ellipsis;
+      font-size: 10px;
+      margin-right: 5px;
+      background-color: $color-super-silver;
+      color: $color-gray;
+      border-radius: 5px;
     }
   }
 
@@ -72,7 +96,7 @@
     height: 50px;
     border-bottom-right-radius: inherit;
     border-bottom-left-radius: inherit;
-    padding: 15px 15px 0;
+    padding: 10px 15px 0;
 
     .cardBtn {
       padding: 8px 20px;

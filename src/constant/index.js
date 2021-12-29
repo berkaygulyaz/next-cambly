@@ -1,17 +1,14 @@
 const CamblyConstants = {
   HEADER: [
     {
-      id: 1,
       slug: "/#/tutors",
       value: "Tutors",
     },
     {
-      id: 2,
       slug: "/#/courses",
       value: "Courses",
     },
     {
-      id: 3,
       slug: "/#/progress",
       value: "Progress",
     },
@@ -31,6 +28,7 @@ const CamblyConstants = {
         "https://camblyavatars.s3.amazonaws.com/5a76f28a66029b0026708224s200?h=9ae964f976073f0d4017c40fafd7a963",
       about: "sports, art, culture, ancient history, etc,",
       languages: "English (Native: USA Accent)",
+      chats: "1,000+ chats",
     },
     {
       id: 2,
@@ -38,7 +36,8 @@ const CamblyConstants = {
       name: "shaun foster",
       badge: "https://www.cambly.com/static/images/country-flag-icons/US.png",
       location: "Atlanta, GA - USA",
-      info: "If you are looking to improve your English and Spanish while having fun in the process, I am the tutor for you!",
+      info:
+        "If you are looking to improve your English and Spanish while having fun in the process, I am the tutor for you!",
       video:
         "https://d1z2nqdm9ph1g6.cloudfront.net/604d02f35821bcfc8e26effa/604d02f35821bcfc8e26effa?Expires=1640348014&Signature=V85NEp8KXfzuGCrXWSJrogMpOjQAzO5~HUtwcOxS~GCcxu8QdjMdsV1HffoITI25QLFfyjDjQ56nZ1XKuXZjmdRgykXMfR7j4KXX1ZooHuW4FahEAw1MTXXpTG1g2No2o1EXdsflPC8Fav1~fDFz2IY~7i6JbfukPSe8UfiPKtezRDBDrbYe35neUqPPNKaiq64LkTN1q4QK1VZyGm2657e~otbfurdg1nUwJFdJP9n9dPWZQ-PYp89JGdUgKj-s-Ty-n5oXDOBX8vbdLIyX4bojM3RaiYdriLQeB~pRTXswaEYO3oXqArXhkxGHFOKWlzypz5aaOnetVRqSLUT-hw__&Key-Pair-Id=APKAIKYVFETQQHXNXQ5Q",
       avatar:
@@ -46,6 +45,8 @@ const CamblyConstants = {
       about:
         "I love running, music, traveling, and spending time with family and friends.",
       languages: "English (Native: USA Accent)",
+      chats: "1,000+ chats",
+      teacher: "Teaching certificate ",
     },
     {
       id: 3,
@@ -53,7 +54,8 @@ const CamblyConstants = {
       name: "Orlando G",
       badge: "https://www.cambly.com/static/images/country-flag-icons/US.png",
       location: "San Diego, CA",
-      info: "I enjoy teaching beginners because I am very patient and love to see them evolve into advanced English speakers.",
+      info:
+        "I enjoy teaching beginners because I am very patient and love to see them evolve into advanced English speakers.",
       video:
         "https://d1z2nqdm9ph1g6.cloudfront.net/5e17ec68f0947edbb16370f1/5e17ec68f0947edbb16370f1?Expires=1640348116&Signature=Trxif3VxM03dQyZ6M1Vh-BPbvTytkZeKFthvQKGwtnjC0901AheulutVwyaWs6WM~9qOLbfWbhhwcuA3RwnsZevIrS47s3BzAbaJ4EJefrHphafeiWmdaA2Ju80ThFvH-e2SZtj~Hld29yWU9Jd7-Fs5gES9r2mhnL2~k61gcjkuSqdKoS0Mj8Y8cA-EUVER5LWCL~eUeShZ6LZBDof3PiUtxNIY24~hYc39prKYKeuQR9TMGKDlMVu8~gcxJyUPc~qC-HDJRGgIPeKHOwLFoTbY3HvPK9g7hRmiyh76AjoFRilTx3EmkSjlJVapHftkYEnjVMRPfq7iz6pJAd6McA__&Key-Pair-Id=APKAIKYVFETQQHXNXQ5Q",
       avatar:
@@ -61,8 +63,10 @@ const CamblyConstants = {
       about:
         "I am always interested in new technology overall, I enjoy playing soccer, lisening to music, going to the beach, video games and many more.",
       languages: "English (Native: North American Accent)",
+      chats: "1,000+ chats",
+      teacher: "Teaching certificate ",
     },
   ],
 };
 
-export default QualityConstants;
+export default CamblyConstants;
