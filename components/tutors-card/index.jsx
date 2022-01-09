@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../container";
 import Row from "../row";
 import Col from "../col";
@@ -6,15 +6,22 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
 import CamblyConstants from "../../src/constant/index";
+import Filter from "../filter";
 
 function tutorsCard({}) {
+  const [searchTutor, setsearchTutor] = useState(CamblyConstants.TUTORS);
+
+  const handleSearch = (e) => {
+    setsearchTutor(CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e)));
+  };
   return (
     <div className={styles.cardsWrapper}>
       <Container>
         <Row>
           <Col>
+            <Filter handleKeyUp={(value) => handleSearch(value)} />
             <div className={styles.cards}>
-              {CamblyConstants.TUTORS.map((tutor) => (
+              {searchTutor.map((tutor) => (
                 <div className={styles.card}>
                   <div className={styles.cardHeader}>
                     <img className={styles.headerAvatar} src={tutor.avatar} />
@@ -29,8 +36,14 @@ function tutorsCard({}) {
                           {tutor.location}
                         </div>
                         <div className={styles.tutorsSpecialInfo}>
-                          {tutor.chats && (<div className={styles.infoCard}>{tutor.chats}</div>)}
-                          {tutor.teacher && (<div className={styles.infoCard}>{tutor.teacher}</div>)}
+                          {tutor.chats && (
+                            <div className={styles.infoCard}>{tutor.chats}</div>
+                          )}
+                          {tutor.teacher && (
+                            <div className={styles.infoCard}>
+                              {tutor.teacher}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
