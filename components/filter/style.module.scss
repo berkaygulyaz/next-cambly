@@ -1,3 +1,12 @@
 @import "../../src/assets/common/variables";
 
-
+.filterWrapper {
+    margin-bottom: 20px;
+  .search {
+    padding: 10px 14px;
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid $color-super-silver;
+    outline: 0;
+  }
+}
