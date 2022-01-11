@@ -7,12 +7,12 @@ import teacher from "../../src/assets/img/5a76f28a66029b0026708224s200.png";
 function CalendarInfo() {
   const [show, setShow] = useState(false);
 
-  function toggle() {
+  function handleButtonClick() {
     setShow(!show);
   }
   return (
     <div className={styles.calendar}>
-      <div onClick={toggle} className={styles.calendarIcon}>
+      <div onClick={handleButtonClick} className={styles.calendarIcon}>
         <Image src={calendar} alt="bell icon" width={20} height={20} />
       </div>
 

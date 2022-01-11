@@ -6,13 +6,13 @@ import avatar from "../../src/assets/img/avatar.png";
 function CalendarInfo() {
   const [show, setShow] = useState(false);
 
-  function toggle() {
+  function handleButtonClick() {
     setShow(!show);
   }
   return (
     <div className={styles.profile}>
       <Image
-        onClick={toggle}
+        onClick={handleButtonClick}
         src={avatar}
         alt="profile avatar"
         width={40}

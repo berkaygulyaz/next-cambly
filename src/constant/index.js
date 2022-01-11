@@ -67,6 +67,21 @@ const CamblyConstants = {
       teacher: "Teaching certificate ",
     },
   ],
+
+  FILTER: [
+    {
+      title: "Lesson Level",
+      value: ["Beginner", "Intermediate", "Advanced"]
+    },
+    {
+      title: "Tutor Accent",
+      value: ["North American Accent", "British Accent", "Australian Accent", "Other Accent"]
+    },
+    {
+      title: "Tutor Personality",
+      value: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"]
+    }
+  ]
 };
 
 export default CamblyConstants;

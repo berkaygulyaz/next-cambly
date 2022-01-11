@@ -6,12 +6,12 @@ import Image from "next/image";
 function Notifications() {
   const [show, setShow] = useState(false);
 
-  function toggle() {
+  function handleButtonClick() {
     setShow(!show);
   }
   return (
     <div className={styles.notification}>
-      <div onClick={toggle} className={styles.bell}>
+      <div onClick={handleButtonClick} className={styles.bell}>
         <Image src={bell} alt="bell icon" width={20} height={20} />
       </div>
       <div

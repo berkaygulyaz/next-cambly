@@ -7,7 +7,7 @@ import Link from "next/link";
 function Info({}) {
   const [show, setShow] = useState(false);
 
-  function toggle() {
+  function handleButtonClick() {
     setShow(!show);
   }
 
@@ -21,7 +21,7 @@ function Info({}) {
           <button className={styles.lessonDot}></button>
         </div>
       </div>
-      <div className={styles.arrow} onClick={toggle}>
+      <div className={styles.arrow} onClick={handleButtonClick}>
         <Image src={arrow} alt="arrow bottom" height={8} width={10} />
       </div>
 
