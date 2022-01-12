@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "../container";
 import Row from "../row";
 import Col from "../col";
@@ -9,6 +9,7 @@ import CamblyConstants from "../../src/constant/index";
 import Filter from "../filter";
 
 function tutorsCard({}) {
+  const box = useRef(null);
   const [searchTutor, setsearchTutor] = useState(CamblyConstants.TUTORS);
 
   const handleSearch = (e) => {
@@ -19,7 +20,7 @@ function tutorsCard({}) {
       <Container>
         <Row>
           <Col>
-            <Filter handleKeyUp={(value) => handleSearch(value)} />
+            <Filter handleKeyUp={(value) => handleSearch(value)} refProps={box}/>
             <div className={styles.cards}>
               {searchTutor.map((tutor) => (
                 <div className={styles.card}>

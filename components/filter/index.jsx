@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import CamblyConstants from "../../src/constant/index";
 
-function filter({ handleKeyUp }) {
-  const [show, setShow] = useState(false);
+function filter({ handleKeyUp, refProps }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  let ref = useRef(null);
 
-  function handleButtonClick() {
-    setShow(!show);
-  }
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className={styles.filterWrapper}>
@@ -29,17 +40,19 @@ function filter({ handleKeyUp }) {
       <div className={styles.filterBottom}>
         {CamblyConstants.FILTER.map((item) => (
           <div className={styles.filterItem}>
-            <button className={styles.dropdownBtn} onClick={handleButtonClick}>
+            <button
+              className={styles.dropdownBtn}
+              onClick={() => setIsMenuOpen(true)}
+            >
               {item.title}
             </button>
-            {show && (
-              <ul className={styles.dropdownList}>
-                {item.value.map(val => (
+            {isMenuOpen && (
+              <ul className={styles.dropdownList} ref={ref}>
+                {item.value.map((val) => (
                   <li className={styles.listItem}>
                     <input type="checkbox" />
                     <span>{val}</span>
                   </li>
-
                 ))}
               </ul>
             )}
