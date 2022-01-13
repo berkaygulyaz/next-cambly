@@ -70,14 +70,17 @@ const CamblyConstants = {
 
   FILTER: [
     {
+      id: "1",
       title: "Lesson Level",
       value: ["Beginner", "Intermediate", "Advanced"]
     },
     {
+      id: "2",
       title: "Tutor Accent",
       value: ["North American Accent", "British Accent", "Australian Accent", "Other Accent"]
     },
     {
+      id: "3",
       title: "Tutor Personality",
       value: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"]
     }

@@ -3,22 +3,20 @@ import styles from "./style.module.scss";
 import CamblyConstants from "../../src/constant/index";
 
 function filter({ handleKeyUp, refProps }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(null);
   let ref = useRef(null);
 
-  useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {
-        setIsMenuOpen(false);
-      }
-    };
+  const checkIfClickedOutside = () => {
+    if (isMenuOpen !== null) setIsMenuOpen(null);
+  };
 
+  useEffect(() => {
     document.addEventListener("mousedown", checkIfClickedOutside);
 
     return () => {
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
-  }, [isMenuOpen]);
+  });
 
   return (
     <div className={styles.filterWrapper}>
@@ -42,11 +40,11 @@ function filter({ handleKeyUp, refProps }) {
           <div className={styles.filterItem}>
             <button
               className={styles.dropdownBtn}
-              onClick={() => setIsMenuOpen(true)}
+              onClick={() => setIsMenuOpen(item.id)}
             >
               {item.title}
             </button>
-            {isMenuOpen && (
+            {isMenuOpen === item.id && (
               <ul className={styles.dropdownList} ref={ref}>
                 {item.value.map((val) => (
                   <li className={styles.listItem}>
