@@ -29,6 +29,9 @@ const CamblyConstants = {
       about: "sports, art, culture, ancient history, etc,",
       languages: "English (Native: USA Accent)",
       chats: "1,000+ chats",
+      accent: "North American Accent",
+      personality: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"],
+      lessonLevel: ["Beginner", "Intermediate", "Advanced"]
     },
     {
       id: 2,
@@ -47,6 +50,9 @@ const CamblyConstants = {
       languages: "English (Native: USA Accent)",
       chats: "1,000+ chats",
       teacher: "Teaching certificate ",
+      accent: "North American Accent",
+      personality: ["Kind and Patient", "Fun and Gregarious"],
+      lessonLevel: ["Beginner"]
     },
     {
       id: 3,
@@ -65,6 +71,9 @@ const CamblyConstants = {
       languages: "English (Native: North American Accent)",
       chats: "1,000+ chats",
       teacher: "Teaching certificate ",
+      accent: "North American Accent",
+      personality: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"],
+      lessonLevel: ["Beginner", "Intermediate"]
     },
   ],
 
