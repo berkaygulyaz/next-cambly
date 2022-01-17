@@ -2,21 +2,34 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import CamblyConstants from "../../src/constant/index";
 
-function filter({ handleKeyUp, refProps }) {
+function filter({ handleKeyUp }) {
   const [isMenuOpen, setIsMenuOpen] = useState(null);
+  const [isSelectItem, setIsSelectItem] = useState([]);
   let ref = useRef(null);
 
-  const checkIfClickedOutside = () => {
-    if (isMenuOpen !== null) setIsMenuOpen(null);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsMenuOpen(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  const berkay = (val) => {
+    if (isSelectItem.indexOf(val) >= 0) {
+      setIsSelectItem(isSelectItem.filter((x) => x !== val));
+    } else {
+      setIsSelectItem((arr) => [...arr, val]);
+    }
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", checkIfClickedOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
-    };
-  });
+    console.log(isSelectItem);
+  }, [isSelectItem]);
 
   return (
     <div className={styles.filterWrapper}>
@@ -48,7 +61,7 @@ function filter({ handleKeyUp, refProps }) {
               <ul className={styles.dropdownList} ref={ref}>
                 {item.value.map((val) => (
                   <li className={styles.listItem}>
-                    <input type="checkbox" />
+                    <input type="checkbox" onClick={() => berkay(val)} />
                     <span>{val}</span>
                   </li>
                 ))}
