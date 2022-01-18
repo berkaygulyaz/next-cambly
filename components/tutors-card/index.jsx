@@ -5,24 +5,17 @@ import Col from "../col";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.scss";
-import CamblyConstants from "../../src/constant/index";
-import Filter from "../filter";
+import shortid from "shortid";
 
-function tutorsCard({}) {
-  const [searchTutor, setsearchTutor] = useState(CamblyConstants.TUTORS);
-
-  const handleSearch = (e) => {
-    setsearchTutor(CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e)));
-  };
+function tutorsCard({ searchTutor, searchAccentTutor }) {
   return (
     <div className={styles.cardsWrapper}>
       <Container>
         <Row>
           <Col>
-            <Filter handleKeyUp={(value) => handleSearch(value)}/>
             <div className={styles.cards}>
-              {searchTutor.map((tutor) => (
-                <div className={styles.card}>
+              {searchAccentTutor.map((tutor) => (
+                <div className={styles.card} key={shortid.generate()}>
                   <div className={styles.cardHeader}>
                     <img className={styles.headerAvatar} src={tutor.avatar} />
 

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import CamblyConstants from "../../src/constant/index";
+import shortid from "shortid";
 
-function filter({ handleKeyUp }) {
+function filter({ handleKeyUp, handleAccentFilter }) {
   const [isMenuOpen, setIsMenuOpen] = useState(null);
   const [isSelectItem, setIsSelectItem] = useState([]);
   let ref = useRef(null);
@@ -19,7 +20,7 @@ function filter({ handleKeyUp }) {
     };
   }, [isMenuOpen]);
 
-  const berkay = (val) => {
+  const setItem = (val) => {
     if (isSelectItem.indexOf(val) >= 0) {
       setIsSelectItem(isSelectItem.filter((x) => x !== val));
     } else {
@@ -28,8 +29,8 @@ function filter({ handleKeyUp }) {
   };
 
   useEffect(() => {
-    console.log(isSelectItem);
-  }, [isSelectItem]);
+
+  })
 
   return (
     <div className={styles.filterWrapper}>
@@ -60,8 +61,11 @@ function filter({ handleKeyUp }) {
             {isMenuOpen === item.id && (
               <ul className={styles.dropdownList} ref={ref}>
                 {item.value.map((val) => (
-                  <li className={styles.listItem}>
-                    <input type="checkbox" onClick={() => berkay(val)} />
+                  <li
+                    className={styles.listItem}
+                    onClick={() => handleAccentFilter(val)}
+                  >
+                    <input type="checkbox" onMouseUp={() => setItem(val)} />
                     <span>{val}</span>
                   </li>
                 ))}
