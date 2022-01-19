@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
-import CamblyConstants from "../../src/constant/index";
-import shortid from "shortid";
 
-function filter({ handleKeyUp, handleAccentFilter }) {
+function filterBottom({ items, handleFilter }) {
   const [isMenuOpen, setIsMenuOpen] = useState(null);
   const [isSelectItem, setIsSelectItem] = useState([]);
   let ref = useRef(null);
@@ -28,29 +26,10 @@ function filter({ handleKeyUp, handleAccentFilter }) {
     }
   };
 
-  useEffect(() => {
-
-  })
-
   return (
     <div className={styles.filterWrapper}>
-      <div className={styles.filterTop}>
-        <div className={styles.tutorsTab}>
-          <p>Find a Tutor</p>
-          <div className={styles.searchTutorTab}>
-            <button>All</button>
-            <button>Favorites</button>
-          </div>
-        </div>
-        <input
-          type="text"
-          placeholder="Search Here..."
-          className={styles.search}
-          onKeyUp={(event) => handleKeyUp(event.target.value)}
-        />
-      </div>
       <div className={styles.filterBottom}>
-        {CamblyConstants.FILTER.map((item) => (
+        {items.map((item) => (
           <div className={styles.filterItem}>
             <button
               className={styles.dropdownBtn}
@@ -61,11 +40,14 @@ function filter({ handleKeyUp, handleAccentFilter }) {
             {isMenuOpen === item.id && (
               <ul className={styles.dropdownList} ref={ref}>
                 {item.value.map((val) => (
-                  <li
-                    className={styles.listItem}
-                    onClick={() => handleAccentFilter(val)}
-                  >
-                    <input type="checkbox" onMouseUp={() => setItem(val)} />
+                  <li className={styles.listItem}>
+                    <input
+                      type="checkbox"
+                      onClick={() => {
+                        setItem(val);
+                        handleFilter(val);
+                      }}
+                    />
                     <span>{val}</span>
                   </li>
                 ))}
@@ -78,4 +60,4 @@ function filter({ handleKeyUp, handleAccentFilter }) {
   );
 }
 
-export default filter;
+export default filterBottom;

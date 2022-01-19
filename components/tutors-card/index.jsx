@@ -7,14 +7,14 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import shortid from "shortid";
 
-function tutorsCard({ searchTutor, searchAccentTutor }) {
+function tutorsCard({ searchTutor }) {
   return (
     <div className={styles.cardsWrapper}>
       <Container>
         <Row>
           <Col>
             <div className={styles.cards}>
-              {searchAccentTutor.map((tutor) => (
+              {searchTutor.map((tutor) => (
                 <div className={styles.card} key={shortid.generate()}>
                   <div className={styles.cardHeader}>
                     <img className={styles.headerAvatar} src={tutor.avatar} />
