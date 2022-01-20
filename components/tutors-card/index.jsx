@@ -7,14 +7,24 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import shortid from "shortid";
 
-function tutorsCard({ searchTutor }) {
+function tutorsCard({ data, all }) {
+  const [mapTutor, setMapTutor] = useState(all);
+
+  useEffect(() => {
+    if (data == "") {
+      setMapTutor(all)
+    } else {
+      setMapTutor(data)
+    }
+  });
+
   return (
     <div className={styles.cardsWrapper}>
       <Container>
         <Row>
           <Col>
             <div className={styles.cards}>
-              {searchTutor.map((tutor) => (
+              {mapTutor.map((tutor) => (
                 <div className={styles.card} key={shortid.generate()}>
                   <div className={styles.cardHeader}>
                     <img className={styles.headerAvatar} src={tutor.avatar} />

@@ -9,36 +9,31 @@ import CamblyConstants from "../src/constant/index";
 import FilterBottom from "../components/filter-bottom";
 
 function Home() {
-  const [searchTutor, setsearchTutor] = useState(CamblyConstants.TUTORS);
   const [filterTutor, setFilterTutor] = useState(CamblyConstants.TUTORS);
-  const [a, setA] = useState(CamblyConstants.TUTORS);
+  const [filterField, setFilterField] = useState(CamblyConstants.TUTORS);
 
-  const handleSearch = (e) => {
-    setsearchTutor(
-      CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e))
-    );
-  };
-  const handleFilter = (e) => {
-    setFilterTutor(
-      CamblyConstants.TUTORS.filter((t) => t.lessonLevel.includes(e))
-    );
-  };
-
+  // const handleSearch = (e) => {
+  //   setsearchTutor(
+  //     CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e))
+  //   );
+  // };
   useEffect(() => {
-    console.log(filterTutor);
-  }, [filterTutor]);
+    setFilterTutor(
+      CamblyConstants.TUTORS.filter((e) =>
+        e.personalInfo.find((i) => filterField.includes(i))
+      )
+    );
+  }, [filterField]);
   return (
     <div>
       <Layout>
-        {/* <Banner /> */}
-        {/* <FilterTop
-          handleKeyUp={(value) => handleSearch(value)}
-        /> */}
+        <Banner />
+        <FilterTop handleKeyUp={(value) => handleSearch(value)} />
         <FilterBottom
           items={CamblyConstants.FILTER}
-          handleFilter={(value) => handleFilter(value)}
+          handleFilterField={(e) => setFilterField(e)}
         />
-        <TutorsCard searchTutor={searchTutor} searchAccentTutor={filterTutor} />
+        <TutorsCard data={filterTutor} all={CamblyConstants.TUTORS} />
       </Layout>
     </div>
   );

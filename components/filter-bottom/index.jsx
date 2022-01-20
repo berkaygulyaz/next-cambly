@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 
-function filterBottom({ items, handleFilter }) {
+function filterBottom({ items, handleFilter, handleFilterField }) {
   const [isMenuOpen, setIsMenuOpen] = useState(null);
   const [isSelectItem, setIsSelectItem] = useState([]);
+  const [clickBtn, setClickBtn] = useState("");
   let ref = useRef(null);
 
   useEffect(() => {
@@ -26,6 +27,11 @@ function filterBottom({ items, handleFilter }) {
     }
   };
 
+  useEffect(() => {
+    // console.log(isSelectItem);
+    handleFilterField(isSelectItem);
+  }, [isSelectItem]);
+
   return (
     <div className={styles.filterWrapper}>
       <div className={styles.filterBottom}>
@@ -45,7 +51,7 @@ function filterBottom({ items, handleFilter }) {
                       type="checkbox"
                       onClick={() => {
                         setItem(val);
-                        handleFilter(val);
+                        setClickBtn(item.title);
                       }}
                     />
                     <span>{val}</span>

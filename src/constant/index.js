@@ -29,9 +29,14 @@ const CamblyConstants = {
       about: "sports, art, culture, ancient history, etc,",
       languages: "English (Native: USA Accent)",
       chats: "1,000+ chats",
-      accent: "North American Accent",
-      personality: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"],
-      lessonLevel: ["Beginner", "Intermediate", "Advanced"]
+      personalInfo: [
+        "North American Accent",
+        "Kind and Patient",
+        "Fun and Gregarious",
+        "Beginner",
+        "Intermediate",
+        "Advanced",
+      ],
     },
     {
       id: 2,
@@ -50,9 +55,13 @@ const CamblyConstants = {
       languages: "English (Native: USA Accent)",
       chats: "1,000+ chats",
       teacher: "Teaching certificate ",
-      accent: "North American Accent",
-      personality: ["Kind and Patient", "Fun and Gregarious"],
-      lessonLevel: ["Beginner"]
+      personalInfo: [
+        "North American Accent",
+        "Kind and Patient",
+        "Fun and Gregarious",
+        "Scholarly and Knowledgeable",
+        "Beginner",
+      ],
     },
     {
       id: 3,
@@ -71,9 +80,14 @@ const CamblyConstants = {
       languages: "English (Native: North American Accent)",
       chats: "1,000+ chats",
       teacher: "Teaching certificate ",
-      accent: "North American Accent",
-      personality: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"],
-      lessonLevel: ["Beginner", "Intermediate"]
+      personalInfo: [
+        "North American Accent",
+        "Kind and Patient",
+        "Fun and Gregarious",
+        "Scholarly and Knowledgeable",
+        "Beginner",
+        "Intermediate",
+      ],
     },
   ],
 
@@ -81,19 +95,28 @@ const CamblyConstants = {
     {
       id: "1",
       title: "Lesson Level",
-      value: ["Beginner", "Intermediate", "Advanced"]
+      value: ["Beginner", "Intermediate", "Advanced"],
     },
     {
       id: "2",
       title: "Tutor Accent",
-      value: ["North American Accent", "British Accent", "Australian Accent", "Other Accent"]
+      value: [
+        "North American Accent",
+        "British Accent",
+        "Australian Accent",
+        "Other Accent",
+      ],
     },
     {
       id: "3",
       title: "Tutor Personality",
-      value: ["Kind and Patient", "Fun and Gregarious", "Scholarly and Knowledgeable"]
-    }
-  ]
+      value: [
+        "Kind and Patient",
+        "Fun and Gregarious",
+        "Scholarly and Knowledgeable",
+      ],
+    },
+  ],
 };
 
 export default CamblyConstants;
