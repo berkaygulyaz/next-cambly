@@ -14,6 +14,48 @@ const CamblyConstants = {
     },
   ],
 
+  FOOTER: [
+    {
+      slug: "/#/privacy-policy",
+      value: "Privacy Policy",
+    },
+    {
+      slug: "/#/terms-coditions",
+      value: "Terms And Conditions",
+    },
+    {
+      slug: "/#/jobs",
+      value: "Jobs",
+    },
+    {
+      slug: "/#/contact",
+      value: "Contact",
+    },
+  ],
+
+  SOCIAL_MEDIA: [
+    {
+      slug: "https://twitter.com/cambly",
+      value: "Twitter",
+      icon: "https://www.cambly.com/static/images/twitter_logo25.png"
+    },
+    {
+      slug: "https://www.instagram.com/cambly_global/",
+      value: "Instagram",
+      icon: "https://www.cambly.com/static/images/instagram_logo24.png"
+    },
+    {
+      slug: "https://www.facebook.com/camblyapp",
+      value: "Facebook",
+      icon: "https://www.cambly.com/static/images/facebook_logo25.png"
+    },
+    {
+      slug: "https://www.youtube.com/user/CamblyEnglish",
+      value: "Youtube",
+      icon: "https://www.cambly.com/static/images/youtube_social_square_red.png"
+    },
+  ],
+
   TUTORS: [
     {
       id: 1,

@@ -7,7 +7,7 @@ import ContainerFluid from "../container-fluid";
 import Row from "../row";
 import Logo from "../../src/assets/img/primary.png";
 import Info from "../info-plan";
-import Nav from "../nav";
+import Nav from "../header-nav";
 import Notifications from "../notifications";
 import CalendarInfo from "../calendar-info";
 import ProfileButton from "../profile-button";
