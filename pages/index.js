@@ -33,7 +33,7 @@ function Home() {
           items={CamblyConstants.FILTER}
           handleFilterField={(e) => setFilterField(e)}
         />
-        <TutorsCard data={filterTutor} all={CamblyConstants.TUTORS} />
+        <TutorsCard data={filterTutor} listTutor={CamblyConstants.TUTORS} />
       </Layout>
     </div>
   );
