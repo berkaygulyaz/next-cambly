@@ -7,20 +7,7 @@ import styles from "./style.module.scss";
 import shortid from "shortid";
 import CamblyConstants from "../../src/constant/index";
 
-function tutorsCard({ listTutor }) {
-  const addFavorites = (t) => {
-    var newTutorData = t;
-
-    if (localStorage.getItem("tutor") == null) {
-      localStorage.setItem("tutor", "[]");
-    }
-
-    var oldTutorData = JSON.parse(localStorage.getItem("tutor"));
-    oldTutorData.push(newTutorData);
-
-    localStorage.setItem("tutor", JSON.stringify(oldTutorData));
-  };
-
+function tutorsCard({ listTutor, btnName, fav }) {
   return (
     <div className={styles.cardsWrapper}>
       <Container>
@@ -58,9 +45,9 @@ function tutorsCard({ listTutor }) {
                       </div>
                       <div
                         className={styles.cardHeaderAction}
-                        onClick={() => addFavorites(tutor)}
+                        onClick={() => fav(tutor)}
                       >
-                        Favori
+                        {btnName}
                       </div>
                     </div>
                     <div className={styles.cardContent}>

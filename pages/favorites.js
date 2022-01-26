@@ -15,12 +15,26 @@ function Favorites() {
     setFavTutors(JSON.parse(localStorage.getItem("tutor")));
   }, []);
 
+  const delTutor = (t) => {
+    var oldTutorData = JSON.parse(localStorage.getItem("tutor"));
+
+    localStorage.setItem(
+      "tutor",
+      JSON.stringify(oldTutorData.filter((e) => e.id !== t.id))
+    );
+    setFavTutors(JSON.parse(localStorage.getItem("tutor")));
+  };
+
   return (
     <div>
       <Layout>
         <Banner />
         <FilterTop handleKeyUp={(value) => handleSearch(value)} />
-        <TutorsCard listTutor={favTutors} />
+        <TutorsCard
+          listTutor={favTutors}
+          btnName="Delete Favorites"
+          fav={(val) => delTutor(val)}
+        />
       </Layout>
     </div>
   );

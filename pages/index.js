@@ -17,13 +17,24 @@ function Home() {
   //     CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e))
   //   );
   // };
-  useEffect(() => {
-    setFilterTutor(
-      CamblyConstants.TUTORS.filter((e) =>
-        e.personalInfo.find((i) => filterField.includes(i))
-      )
-    );
-  }, [filterField]);
+
+  // useEffect(() => {
+  //   setFilterTutor(
+  //     CamblyConstants.TUTORS.filter((e) =>
+  //       e.personalInfo.find((i) => filterField.includes(i))
+  //     )
+  //   );
+  // }, [filterField]);
+
+  const addTutor = (t) => {
+    if (localStorage.getItem("tutor") == null) {
+      localStorage.setItem("tutor", "[]");
+    }
+
+    var oldTutorData = JSON.parse(localStorage.getItem("tutor"));
+    oldTutorData.push(t);
+    localStorage.setItem("tutor", JSON.stringify(oldTutorData));
+  };
   return (
     <div>
       <Layout>
@@ -33,7 +44,12 @@ function Home() {
           items={CamblyConstants.FILTER}
           handleFilterField={(e) => setFilterField(e)}
         />
-        <TutorsCard data={filterTutor} listTutor={CamblyConstants.TUTORS} />
+        <TutorsCard
+          data={filterTutor}
+          listTutor={CamblyConstants.TUTORS}
+          btnName="Add Favorites"
+          fav={(val) => addTutor(val)}
+        />
       </Layout>
     </div>
   );
