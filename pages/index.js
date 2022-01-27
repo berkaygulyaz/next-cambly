@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Head from "next/head";
 import Banner from "../components/banner";
-import Header from "../components/header";
 import Layout from "../components/layout";
 import TutorsCard from "../components/tutors-card";
 import FilterTop from "../components/filter-top";
 import CamblyConstants from "../src/constant/index";
 import FilterBottom from "../components/filter-bottom";
+import Container from "../components/container";
+import Row from "../components/row";
+import Col from "../components/col";
+import styles from "../components/tutors-card/style.module.scss";
 
 function Home() {
   const [filterTutor, setFilterTutor] = useState(CamblyConstants.TUTORS);
@@ -26,15 +28,6 @@ function Home() {
   //   );
   // }, [filterField]);
 
-  const addTutor = (t) => {
-    if (localStorage.getItem("tutor") == null) {
-      localStorage.setItem("tutor", "[]");
-    }
-
-    var oldTutorData = JSON.parse(localStorage.getItem("tutor"));
-    oldTutorData.push(t);
-    localStorage.setItem("tutor", JSON.stringify(oldTutorData));
-  };
   return (
     <div>
       <Layout>
@@ -44,12 +37,19 @@ function Home() {
           items={CamblyConstants.FILTER}
           handleFilterField={(e) => setFilterField(e)}
         />
-        <TutorsCard
-          data={filterTutor}
-          listTutor={CamblyConstants.TUTORS}
-          btnName="Add Favorites"
-          fav={(val) => addTutor(val)}
-        />
+        <div className={styles.cardsWrapper}>
+          <Container>
+            <Row>
+              <Col>
+                <div className={styles.cards}>
+                  {CamblyConstants.TUTORS.map((tutor) => (
+                    <TutorsCard data={filterTutor} tutor={tutor} />
+                  ))}
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </Layout>
     </div>
   );
