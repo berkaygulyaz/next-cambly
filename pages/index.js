@@ -14,6 +14,20 @@ function Home() {
   const [filterTutor, setFilterTutor] = useState(CamblyConstants.TUTORS);
   const [filterField, setFilterField] = useState(CamblyConstants.TUTORS);
 
+  const clickAlert = (data) => {
+    // localstorage datası var mı
+    // var ise önce çekip bir değişkene at
+    // localStorage datası içinde data parametresinin id'si var mı
+    // yok ise ekle, var ise çıkar
+    // localstorage'a veriyi yaz
+    // eğer localstorage'da hiç data yok ise yeni oluşturup localstorage'a ekle
+    let storageTutor = JSON.parse(localStorage.getItem("tutor"));
+
+    if (storageTutor == null) {
+      localStorage.setItem("tutor", JSON.stringify([data]));
+    }
+    console.log(storageTutor.filter((e) => e.id !== data.id));
+  };
   // const handleSearch = (e) => {
   //   setsearchTutor(
   //     CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e))
@@ -43,7 +57,11 @@ function Home() {
               <Col>
                 <div className={styles.cards}>
                   {CamblyConstants.TUTORS.map((tutor) => (
-                    <TutorsCard data={filterTutor} tutor={tutor} />
+                    <TutorsCard
+                      data={filterTutor}
+                      tutor={tutor}
+                      onChildClick={clickAlert}
+                    />
                   ))}
                 </div>
               </Col>

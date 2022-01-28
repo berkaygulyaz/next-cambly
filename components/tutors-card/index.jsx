@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import shortid from "shortid";
 
-function tutorsCard({ tutor }) {
+function tutorsCard({ tutor, onChildClick }) {
   const [text, setText] = useState("Add Favorites");
   const [favTutors, setFavTutors] = useState("");
 
@@ -34,10 +34,10 @@ function tutorsCard({ tutor }) {
   const funcWrapper = (val) => {
     if (text == "Delete Favorites") {
       setText("Add Favorites");
-      delTutor(val);
+      // delTutor(val);
     } else {
       setText("Delete Favorites");
-      addTutor(val);
+      // addTutor(val);
     }
   };
 
@@ -69,7 +69,10 @@ function tutorsCard({ tutor }) {
         </div>
         <div
           className={styles.cardHeaderAction}
-          onClick={() => funcWrapper(tutor)}
+          onClick={() => {
+            onChildClick(tutor);
+            funcWrapper(tutor);
+          }}
         >
           {text}
         </div>

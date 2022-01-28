@@ -9,11 +9,15 @@ import Col from "../components/col";
 import styles from "../components/tutors-card/style.module.scss";
 
 function Favorites() {
-//   const [favTutors, setFavTutors] = useState("");
+    const [favTutors, setFavTutors] = useState("");
 
-//   useEffect(() => {
-//     setFavTutors(JSON.parse(localStorage.getItem("tutor")));
-//   }, []);
+    useEffect(() => {
+      setFavTutors(JSON.parse(localStorage.getItem("tutor")));
+    }, []);
+
+  function clickAlert(data) {
+    console.log(data);
+  }
   return (
     <div>
       <Layout>
@@ -26,7 +30,11 @@ function Favorites() {
                 <div className={styles.cards}>
                   {favTutors &&
                     favTutors.map((tutor) => (
-                      <TutorsCard tutor={tutor} favTutor={favTutors} />
+                      <TutorsCard
+                        tutor={tutor}
+                        favTutor={favTutors}
+                        onChildClick={clickAlert}
+                      />
                     ))}
                 </div>
               </Col>
