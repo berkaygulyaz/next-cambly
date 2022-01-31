@@ -1,0 +1,25 @@
+@import "../common/variables";
+
+.banner {
+  align-items: center;
+  background-color: $color-decor-yellow;
+  display: flex;
+  height: 400px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.filterTopWrapper {
+  margin-bottom: 20px;
+}
+
+.cardsWrapper {
+  margin: 30px 0;
+
+  .cards {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+}

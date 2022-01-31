@@ -7,32 +7,24 @@ import Link from "next/link";
 
 function FilterTop({ handleKeyUp }) {
   return (
-    <div className={styles.filterTopWrapper}>
-      <Container>
-        <Row>
-          <Col>
-            <div className={styles.filterTop}>
-              <div className={styles.tutorsTab}>
-                <p>Find a Tutor</p>
-                <div className={styles.searchTutorTab}>
-                  <Link href="/">
-                    <a>All</a>
-                  </Link>
-                  <Link href="/favorites">
-                    <a>Favorites</a>
-                  </Link>
-                </div>
-              </div>
-              <input
-                type="text"
-                placeholder="Search Here..."
-                className={styles.search}
-                onKeyUp={(event) => handleKeyUp(event.target.value)}
-              />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+    <div className={styles.filterTop}>
+      <div className={styles.tutorsTab}>
+        <p>Find a Tutor</p>
+        <div className={styles.searchTutorTab}>
+          <Link href="/">
+            <a>All</a>
+          </Link>
+          <Link href="/favorites">
+            <a>Favorites</a>
+          </Link>
+        </div>
+      </div>
+      <input
+        type="text"
+        placeholder="Search Here..."
+        className={styles.search}
+        onKeyUp={(event) => handleKeyUp(event.target.value)}
+      />
     </div>
   );
 }

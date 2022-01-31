@@ -4,46 +4,25 @@ import styles from "./style.module.scss";
 import shortid from "shortid";
 
 function tutorsCard({ tutor, onChildClick }) {
-  const [text, setText] = useState("Add Favorites");
-  const [favTutors, setFavTutors] = useState("");
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const changeText = (data) => {
+    let storageTutor = JSON.parse(localStorage.getItem("tutor"));
+
+    if (storageTutor !== null) {
+      const tutor = storageTutor.filter((e) => e.id == data.id);
+
+      if (tutor.length > 0) {
+        setIsFavorite(true);
+      } else {
+        setIsFavorite(false);
+      }
+    }
+  };
 
   useEffect(() => {
-    setFavTutors(JSON.parse(localStorage.getItem("tutor")));
+    changeText(tutor);
   }, []);
-
-  const addTutor = (t) => {
-    if (localStorage.getItem("tutor") == null) {
-      localStorage.setItem("tutor", "[]");
-    }
-
-    var oldTutorData = JSON.parse(localStorage.getItem("tutor"));
-    oldTutorData.push(t);
-    localStorage.setItem("tutor", JSON.stringify(oldTutorData));
-  };
-
-  const delTutor = (t) => {
-    var oldTutorData = JSON.parse(localStorage.getItem("tutor"));
-
-    localStorage.setItem(
-      "tutor",
-      JSON.stringify(oldTutorData.filter((e) => e.id !== t.id))
-    );
-    setFavTutors(JSON.parse(localStorage.getItem("tutor")));
-  };
-
-  const funcWrapper = (val) => {
-    if (text == "Delete Favorites") {
-      setText("Add Favorites");
-      // delTutor(val);
-    } else {
-      setText("Delete Favorites");
-      // addTutor(val);
-    }
-  };
-
-  useEffect(() => {
-    // Localstorage'da data var mı kontrol et. Varsa delete favorite yap
-  });
 
   return (
     <div className={styles.card} key={shortid.generate()}>
@@ -71,10 +50,10 @@ function tutorsCard({ tutor, onChildClick }) {
           className={styles.cardHeaderAction}
           onClick={() => {
             onChildClick(tutor);
-            funcWrapper(tutor);
+            setIsFavorite(!isFavorite);
           }}
         >
-          {text}
+          {isFavorite ? "Delete Favorite" : "Add Favorite"}
         </div>
       </div>
       <div className={styles.cardContent}>

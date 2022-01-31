@@ -1,27 +1,16 @@
 @import "../../src/assets/common/variables";
 
-.cardsWrapper {
-  margin: 30px 0;
-
-  .cards {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    .card {
-      margin-bottom: 20px;
-      max-width: 32.5%;
-      min-width: 370px;
-      flex-grow: 1;
-      border: 1px solid rgb(221, 221, 221);
-      box-sizing: border-box;
-      border-radius: 8px;
-      font-family: $pt-sans;
-      height: 240px;
-      margin-right: 20px;
-    }
-  }
-
+.card {
+  margin-bottom: 20px;
+  max-width: 32.5%;
+  min-width: 370px;
+  flex-grow: 1;
+  border: 1px solid rgb(221, 221, 221);
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: $pt-sans;
+  height: 240px;
+  margin-right: 20px;
   .cardHeader {
     display: flex;
     flex-direction: row;
@@ -42,7 +31,7 @@
     padding-right: 50px;
     font-weight: 600;
   }
-
+  
   .subHeader {
     margin-top: 10px;
     .badge {
@@ -56,11 +45,11 @@
       font-size: 12px;
       color: $color-steel-wool;
     }
-
+  
     .tutorsSpecialInfo {
       display: flex;
     }
-
+  
     .infoCard {
       margin-top: 5px;
       overflow: hidden;
@@ -74,7 +63,7 @@
       border-radius: 5px;
     }
   }
-
+  
   .cardContent {
     margin: 0 15px;
     height: 40px;
@@ -89,7 +78,7 @@
       text-overflow: ellipsis;
     }
   }
-
+  
   .cardBtnWrapper {
     display: flex;
     justify-content: flex-end;
@@ -98,7 +87,7 @@
     border-bottom-right-radius: inherit;
     border-bottom-left-radius: inherit;
     padding: 10px 15px 0;
-
+  
     .cardBtn {
       padding: 8px 20px;
       font-size: 12px;
@@ -109,8 +98,9 @@
       background-color: $color-super-silver;
     }
   }
-
+  
   .cardHeaderAction {
     cursor: pointer;
   }
 }
+

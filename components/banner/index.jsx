@@ -5,18 +5,11 @@ import Col from "../col";
 import styles from "./style.module.scss";
 
 function Banner({}) {
-
   return (
-    <div className={styles.banner}>
-        <Container>
-            <Row>
-                <Col>
-                    <h2 className={styles.bannerTitle}>Welcome Back, Berkay</h2>
-                    <div className={styles.wordMap}></div>
-                </Col>
-            </Row>
-        </Container>
-    </div>
+    <>
+      <h2 className={styles.bannerTitle}>Welcome Back, Berkay</h2>
+      <div className={styles.wordMap}></div>
+    </>
   );
 }
 

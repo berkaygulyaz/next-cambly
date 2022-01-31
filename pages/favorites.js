@@ -6,24 +6,38 @@ import FilterTop from "../components/filter-top";
 import Container from "../components/container";
 import Row from "../components/row";
 import Col from "../components/col";
-import styles from "../components/tutors-card/style.module.scss";
+import setFavorite from "../src/helpers/setFavorite";
+import styles from "../src/assets/common/style.module.scss"
 
 function Favorites() {
-    const [favTutors, setFavTutors] = useState("");
+  const [favTutors, setFavTutors] = useState("");
 
-    useEffect(() => {
-      setFavTutors(JSON.parse(localStorage.getItem("tutor")));
-    }, []);
+  useEffect(() => {
+    setFavTutors(JSON.parse(localStorage.getItem("tutor")));
+  }, []);
 
-  function clickAlert(data) {
-    console.log(data);
-  }
   return (
     <div>
       <Layout>
-        <Banner />
-        <FilterTop handleKeyUp={(value) => handleSearch(value)} />
-        <div className={styles.cardsWrapper}>
+        <section className={styles.banner}>
+          <Container>
+            <Row>
+              <Col>
+                <Banner />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section className={styles.filterTopWrapper}>
+          <Container>
+            <Row>
+              <Col>
+                <FilterTop handleKeyUp={(value) => handleSearch(value)} />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section className={styles.cardsWrapper}>
           <Container>
             <Row>
               <Col>
@@ -33,14 +47,14 @@ function Favorites() {
                       <TutorsCard
                         tutor={tutor}
                         favTutor={favTutors}
-                        onChildClick={clickAlert}
+                        onChildClick={setFavorite}
                       />
                     ))}
                 </div>
               </Col>
             </Row>
           </Container>
-        </div>
+        </section>
       </Layout>
     </div>
   );
