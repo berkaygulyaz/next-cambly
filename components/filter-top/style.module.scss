@@ -3,7 +3,7 @@
 .filterTop {
   display: flex;
   justify-content: space-between;
-  padding: 6px 0px 10px;
+  padding: 25px 0px 10px;
   .tutorsTab {
     display: flex;
     align-items: center;
@@ -37,5 +37,10 @@
     border: 1px solid $color-super-silver;
     outline: 0;
     font: $pt-sans;
+  }
+
+  .active {
+    color: $color-river-fountain;
+    font-weight: bold;
   }
 }

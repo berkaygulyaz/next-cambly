@@ -1,5 +1,5 @@
 const setFavorite = (data) => {
-  let storageTutor = JSON.parse(localStorage.getItem("tutor"));
+  let storageTutor = JSON.parse(localStorage.getItem("tutor")) || [];
 
   if (storageTutor == null) {
     localStorage.setItem("tutor", JSON.stringify([data]));

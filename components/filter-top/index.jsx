@@ -4,24 +4,37 @@ import Container from "../container";
 import Row from "../row";
 import Col from "../col";
 import Link from "next/link";
+import classNames from "classnames";
 
-function FilterTop({ handleKeyUp }) {
+function FilterTop({ handleKeyUp, status }) {
   return (
     <div className={styles.filterTop}>
       <div className={styles.tutorsTab}>
         <p>Find a Tutor</p>
         <div className={styles.searchTutorTab}>
           <Link href="/">
-            <a>All</a>
+            <a
+              className={classNames({
+                [styles.active]: status === "homepage",
+              })}
+            >
+              All
+            </a>
           </Link>
           <Link href="/favorites">
-            <a>Favorites</a>
+            <a
+              className={classNames({
+                [styles.active]: status === "favorite",
+              })}
+            >
+              Favorites
+            </a>
           </Link>
         </div>
       </div>
       <input
         type="text"
-        placeholder="Search Here..."
+        placeholder="Search Tutor Name..."
         className={styles.search}
         onKeyUp={(event) => handleKeyUp(event.target.value)}
       />

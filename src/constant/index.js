@@ -59,7 +59,7 @@ const CamblyConstants = {
   TUTORS: [
     {
       id: 1,
-      slug: "/#/tutors/Tomas-L",
+      slug: "Tomas-L",
       name: "Tomas L.",
       badge: "https://www.cambly.com/static/images/country-flag-icons/US.png",
       location: "San Diego, USA",
@@ -82,7 +82,7 @@ const CamblyConstants = {
     },
     {
       id: 2,
-      slug: "/#/tutors/Shaun-Foster",
+      slug: "Shaun-Foster",
       name: "shaun foster",
       badge: "https://www.cambly.com/static/images/country-flag-icons/US.png",
       location: "Atlanta, GA - USA",
@@ -107,7 +107,7 @@ const CamblyConstants = {
     },
     {
       id: 3,
-      slug: "/#/tutors/Orlando-G",
+      slug: "Orlando-G",
       name: "Orlando G",
       badge: "https://www.cambly.com/static/images/country-flag-icons/US.png",
       location: "San Diego, CA",

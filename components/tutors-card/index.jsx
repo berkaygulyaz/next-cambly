@@ -60,7 +60,7 @@ function tutorsCard({ tutor, onChildClick }) {
         <p className={styles.contentText}>{tutor.info}</p>
       </div>
       <div className={styles.cardBtnWrapper}>
-        <Link href="/">
+        <Link href={'/detail/' + tutor.slug}>
           <a className={styles.cardBtn}>PROFILE</a>
         </Link>
       </div>

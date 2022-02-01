@@ -9,14 +9,15 @@ import Row from "../components/row";
 import Col from "../components/col";
 import setFavorite from "../src/helpers/setFavorite";
 import styles from "../src/assets/common/style.module.scss";
-import classNames from "classnames";
 
 function Home() {
-  // const handleSearch = (e) => {
-  //   setsearchTutor(
-  //     CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e))
-  //   );
-  // };
+  const [searchTutor, setsearchTutor] = useState(CamblyConstants.TUTORS);
+
+  const handleSearch = (e) => {
+    setsearchTutor(
+      CamblyConstants.TUTORS.filter((t) => t.name.toLowerCase().includes(e))
+    );
+  };
 
   return (
     <main>
@@ -34,7 +35,10 @@ function Home() {
           <Container>
             <Row>
               <Col>
-                <FilterTop handleKeyUp={(value) => handleSearch(value)} />
+                <FilterTop
+                  handleKeyUp={(value) => handleSearch(value)}
+                  status="homepage"
+                />
               </Col>
             </Row>
           </Container>
@@ -44,7 +48,7 @@ function Home() {
             <Row>
               <Col>
                 <div className={styles.cards}>
-                  {CamblyConstants.TUTORS.map((tutor) => (
+                  {searchTutor.map((tutor) => (
                     <TutorsCard tutor={tutor} onChildClick={setFavorite} />
                   ))}
                 </div>

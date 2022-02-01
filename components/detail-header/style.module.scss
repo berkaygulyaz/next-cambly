@@ -1,0 +1,43 @@
+@import "../../src/assets/common/variables";
+
+.tutorInfo {
+  display: flex;
+  height: 70px;
+  font-family: $pt-sans;
+  border-bottom: 2px solid rgb(238, 238, 238);
+  margin-top: 20px;
+
+  .tutorInfoDetail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+  }
+  .location {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.43;
+      margin: 0;
+    }
+  }
+  h5 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.334;
+    margin: 0;
+  }
+
+  img {
+    border-radius: 100%;
+
+    &.badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      margin-right: 5px;
+    }
+  }
+}
