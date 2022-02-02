@@ -1,24 +1,25 @@
-@import '../../src/assets/common/variables';
+@import "../../src/assets/common/variables";
 
 .header {
-    background-color: $color-white;
+  background-color: $color-white;
+  height: 64px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+
+  .headerWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: $pt-sans;
     height: 64px;
-    
-    .headerWrapper {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        font-family: $pt-sans;
-        height: 64px;
-        justify-content: space-between;
-    }
+    justify-content: space-between;
+  }
 
-    .leftSide {
-        display: flex;
-    }
+  .leftSide {
+    display: flex;
+  }
 
-    .rightSide {
-        display: flex;
-        align-items: center;
-    }
+  .rightSide {
+    display: flex;
+    align-items: center;
+  }
 }

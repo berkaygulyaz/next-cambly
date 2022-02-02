@@ -1,37 +1,45 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout";
-import Container from "../../components/container";
-import Row from "../../components/row";
-import Col from "../../components/col";
 import Header from "../../components/detail-header";
 import CamblyConstants from "../../src/constant/index";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 import styles from "../../src/assets/common/style.module.scss";
+import Video from "../../components/tutor-video";
+import Personality from "../../components/personality-info";
 
-function Detail() {
+function Detail({}) {
   const router = useRouter();
-  const [tutor, setTutor] = useState(CamblyConstants.TUTORS);
-  const [tutorInfo, setTutorInfo] = useState("");
+  const [tutor, setTutor] = useState(null);
 
   useEffect(() => {
-    setTutor(CamblyConstants.TUTORS.filter((e) => e.slug == router.query.slug));
-    tutor.map((a) => setTutorInfo(a));
+    if (router.isReady) {
+      setTutor(
+        CamblyConstants.TUTORS.filter((e) => e.id == router.query.slug)[0]
+      );
+    }
+  }, [router.isReady]);
 
-    console.log(router)
-  }, []);
+  useEffect(() => {
+    console.log(tutor);
+  }, [tutor]);
 
   return (
     <div>
       <Layout>
-        <section className={styles.headerWrapper}>
-          <Container>
-            <Row>
-              <Col>
-                <Header name={tutorInfo.name} badge={tutorInfo.badge} location={tutorInfo.location} avatar={tutorInfo.avatar} />
-              </Col>
-            </Row>
-          </Container>
-        </section>
+        <main className={styles.detailMain}>
+          {tutor !== null && (
+            <>
+              <Header
+                name={tutor.name}
+                badge={tutor.badge}
+                location={tutor.location}
+                avatar={tutor.avatar}
+              />
+              <Video video={tutor.video} />
+              <Personality about={tutor.about} language={tutor.languages} />
+            </>
+          )}
+        </main>
       </Layout>
     </div>
   );

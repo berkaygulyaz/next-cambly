@@ -1,4 +1,5 @@
 @import '../../src/assets/common/variables';
+@import '../../src/assets/common/mixins';
 
 .navbar {
     align-items: center;
@@ -6,6 +7,9 @@
     flex-direction: row;
     margin-left: 2rem;
     margin-right: 2rem;
+    @include media(mobil) {
+        display: none;
+    }
     a {
         box-sizing: border-box;
         color: $color-carbon;

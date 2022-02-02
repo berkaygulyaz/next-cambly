@@ -1,5 +1,14 @@
 @import "../common/variables";
 
+
+.detailMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  flex-direction: column;
+}
+
 .banner {
   align-items: center;
   background-color: $color-decor-yellow;

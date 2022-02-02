@@ -1,4 +1,5 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
 .footer {
   width: 100%;
@@ -9,6 +10,9 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    @include media(mobil) {
+      justify-content: center;
+    }
   }
 
   .navbar {
@@ -17,6 +21,9 @@
 
   .socialMedia {
     display: flex;
+    @include media(mobil) {
+      display: none;
+    }
 
     img {
       filter: grayscale(100%) opacity(70%) brightness(60%);

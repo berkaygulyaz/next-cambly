@@ -1,4 +1,5 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
 .bannerTitle {
   color: $color-white;
@@ -20,4 +21,8 @@
   top: -120px;
   width: 100%;
   will-change: transform;
+
+  @include media(mobil) {
+    display: none;
+  }
 }

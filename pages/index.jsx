@@ -43,7 +43,7 @@ function Home() {
             </Row>
           </Container>
         </section>
-        <section className={styles.cardsWrapper}>
+        {/* <section className={styles.cardsWrapper}>
           <Container>
             <Row>
               <Col>
@@ -55,7 +55,7 @@ function Home() {
               </Col>
             </Row>
           </Container>
-        </section>
+        </section> */}
       </Layout>
     </main>
   );

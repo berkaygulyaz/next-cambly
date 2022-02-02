@@ -1,87 +1,93 @@
-@import '../../src/assets/common/variables';
+@import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 .calendar {
-    margin: 0 10px;
-    position: relative;
+  margin: 0 10px;
+  position: relative;
+  @include media(mobil) {
+    display: none;
+  }
 
-    .calendarIcon {
-        cursor: pointer;
+  .calendarIcon {
+    cursor: pointer;
+  }
+
+  .calendarInfo {
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    left: -300px;
+    padding: 20px;
+    position: absolute;
+    width: 315px;
+    z-index: 999;
+  }
+
+  .menuTitle {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: $color-black;
+      opacity: 0.5;
+      text-decoration: none;
+      font-size: 13px;
     }
+  }
 
-    .calendarInfo {
-        position: absolute;
-        width: 315px;
-        display: flex;
-        flex-direction: column;
-        left: -300px;
+  .lessonInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .lessonDate {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 30px;
+    font-weight: lighter;
+    line-height: 0.6;
+    margin: 8px 0px;
+    width: 15%;
+
+    small {
+      font-size: 14px;
     }
+  }
 
-    .menuTitle {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
+  .lesson {
+    align-items: center;
+    background-color: $color-super-silver;
+    display: flex;
+    padding: 10px;
+    width: 85%;
+  }
 
-        a{
-            color: $color-black;
-            opacity: .5;
-            text-decoration: none;
-            font-size: 13px;
-        }
+  .image {
+    border-radius: 100%;
+    height: auto;
+  }
+
+  .teacherInfo {
+    margin-left: 10px;
+    span {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 16px;
     }
-
-    .lessonInfo {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
+    p {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      margin: 5px 0px 0px 0px;
     }
+  }
 
-    .lessonDate {
-        color: rgba(0, 0, 0, 0.6);
-        font-size: 30px;
-        font-weight: lighter;
-        line-height: 0.6;
-        margin: 8px 0px;
-        width: 15%;
-
-        small {
-            font-size: 14px;
-        }
-    }
-
-    .lesson {
-        align-items: center;
-        background-color: $color-super-silver;
-        display: flex;
-        padding: 10px;
-        width: 85%;
-    }
-
-    .image {
-        border-radius: 100%;
-        height: auto;
-    }
-
-    .teacherInfo {
-        margin-left: 10px;
-        span{
-            color:rgba(0, 0, 0, 0.6);
-            font-size: 16px;
-        }
-        p{
-            color:rgba(0, 0, 0, 0.6);
-            font-size: 14px;
-            margin: 5px 0px 0px 0px;
-        }
-    }
-
-    .scheduleBtn{
-        align-items: center;
-        background: $color-super-silver;
-        color: rgba(0,0,0,0.6);
-        display: flex;
-        height: 40px;
-        justify-content: center;
-        margin-top: 20px;
-        text-decoration: none;
-    }
-
+  .scheduleBtn {
+    align-items: center;
+    background: $color-super-silver;
+    color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-top: 20px;
+    text-decoration: none;
+  }
 }

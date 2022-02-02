@@ -1,0 +1,23 @@
+@import "../../src/assets/common/variables";
+
+.listWrapper {
+  width: 900px;
+
+  h3 {
+    font: bold 25px $pt-sans;
+    margin-bottom: 0;
+  }
+
+  p {
+    font: normal 16px $pt-sans;
+
+    &.language {
+      border: 1px solid;
+      width: max-content;
+      padding: 5px;
+      border-radius: 16px;
+      height: 19px;
+      font-size: 13px;
+    }
+  }
+}

@@ -1,8 +1,12 @@
 @import '../../src/assets/common/variables';
+@import '../../src/assets/common/mixins';
 
 .notification {
     margin: 0 10px;
     position: relative;
+    @include media(mobil) {
+        display: none;
+    }
     .bell {
         cursor: pointer;
     }
@@ -16,6 +20,7 @@
         position: absolute;
         top: 40px;
         width: 250px;
+        z-index: 999;
     }
 
     .notificationText {

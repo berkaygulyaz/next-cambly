@@ -1,11 +1,13 @@
 @import "../../src/assets/common/variables";
 
 .tutorInfo {
-  display: flex;
-  height: 70px;
-  font-family: $pt-sans;
   border-bottom: 2px solid rgb(238, 238, 238);
+  display: flex;
+  font-family: $pt-sans;
+  height: 70px;
   margin-top: 20px;
+  padding-bottom: 10px;
+  width: 900px;
 
   .tutorInfoDetail {
     display: flex;
@@ -32,6 +34,7 @@
 
   img {
     border-radius: 100%;
+    width: 70px;
 
     &.badge {
       width: 30px;

@@ -1,4 +1,5 @@
 @import '../../src/assets/common/variables';
+@import '../../src/assets/common/mixins';
 
 
 .studentPlanInfo {
@@ -6,6 +7,9 @@
     height: 100%;
     margin: 0 10px;
     position: relative;
+    @include media(mobil) {
+        display: none;
+    }
     .shortInfo {
         align-items: center;
         display: flex;
@@ -56,6 +60,7 @@
         left: -100px;
         position: absolute;
         top: 50px;
+        z-index: 999;
         .infoCard {
             height: auto;
             margin: 8px;

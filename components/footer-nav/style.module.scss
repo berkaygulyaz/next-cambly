@@ -1,9 +1,13 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
 .navbar {
   align-items: center;
   display: flex;
   flex-direction: row;
+  @include media(mobil) {
+    display: none;
+  }
   a {
     box-sizing: border-box;
     color: $color-black;

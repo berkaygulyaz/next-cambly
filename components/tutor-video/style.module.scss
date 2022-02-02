@@ -1,0 +1,10 @@
+@import "../../src/assets/common/variables";
+
+.videoWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  .video {
+    width: 900px;
+  }
+}

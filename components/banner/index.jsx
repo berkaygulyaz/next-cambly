@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Container from "../container";
-import Row from "../row";
-import Col from "../col";
 import styles from "./style.module.scss";
 
 function Banner({}) {

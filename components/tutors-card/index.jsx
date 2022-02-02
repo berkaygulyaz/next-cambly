@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import styles from "./style.module.scss";
 import shortid from "shortid";
 
 function tutorsCard({ tutor, onChildClick }) {
+  const router = useRouter();
+
   const [isFavorite, setIsFavorite] = useState(false);
 
   const changeText = (data) => {
@@ -60,9 +62,12 @@ function tutorsCard({ tutor, onChildClick }) {
         <p className={styles.contentText}>{tutor.info}</p>
       </div>
       <div className={styles.cardBtnWrapper}>
-        <Link href={'/detail/' + tutor.slug}>
-          <a className={styles.cardBtn}>PROFILE</a>
-        </Link>
+        <button
+          className={styles.cardBtn}
+          onClick={() => router.push("/detail/" + tutor.id)}
+        >
+          PROFILE
+        </button>
       </div>
     </div>
   );

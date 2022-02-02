@@ -1,0 +1,41 @@
+@mixin media($point) {
+  @if $point == mobil {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $point == pre-mobil {
+    @media (min-width: 544px) {
+      @content;
+    }
+  }
+  @if $point == mobil-landscape {
+    @media screen and (orientation: landscape) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == only-tablet {
+    @media (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == print {
+    @media print {
+      @content;
+    }
+  } @else if $point == web {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == wide {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == pre-wide {
+    @media (min-width: 1260px) and (max-width: 1470px) {
+      @content;
+    }
+  }
+}
