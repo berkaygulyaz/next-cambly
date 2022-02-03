@@ -3,9 +3,9 @@ import styles from "./style.module.scss";
 
 function detailHeader({ name, badge, location, avatar }) {
   return (
-    <div className={styles.tutorInfo}>
+    <div className={styles.tutor_info}>
       <img className={styles.avatar} src={avatar} />
-      <div className={styles.tutorInfoDetail}>
+      <div className={styles.tutor_info_detail}>
         <h5>{name}</h5>
         <div className={styles.location}>
           <img className={styles.badge} src={badge} />

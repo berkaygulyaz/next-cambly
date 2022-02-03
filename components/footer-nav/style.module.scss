@@ -8,6 +8,9 @@
   @include media(mobil) {
     display: none;
   }
+  @include media(only-tablet) {
+    display: none;
+  }
   a {
     box-sizing: border-box;
     color: $color-black;

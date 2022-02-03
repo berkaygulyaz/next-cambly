@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 
 function Persoality({ about, language }) {
   return (
-    <div className={styles.listWrapper}>
+    <div className={styles.list_wrapper}>
       <div className={styles.list}>
         <h3>About Me</h3>
         <p>{about}</p>

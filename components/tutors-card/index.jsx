@@ -27,29 +27,28 @@ function tutorsCard({ tutor, onChildClick }) {
   }, []);
 
   return (
-    <div className={styles.card} key={shortid.generate()}>
-      <div className={styles.cardHeader}>
-        <img className={styles.headerAvatar} src={tutor.avatar} />
-
-        <div className={styles.cardheaderContent}>
-          <span className={styles.cardheaderTitle}>{tutor.name}</span>
-          <div className={styles.subHeader}>
-            <div className={styles.location}>
-              <img className={styles.badge} src={tutor.badge} />
-              {tutor.location}
-            </div>
-            <div className={styles.tutorsSpecialInfo}>
-              {tutor.chats && (
-                <div className={styles.infoCard}>{tutor.chats}</div>
-              )}
-              {tutor.teacher && (
-                <div className={styles.infoCard}>{tutor.teacher}</div>
-              )}
-            </div>
+    <div class={styles.card_grid} key={shortid.generate()}>
+      <div class={styles.card_grid_header}>
+        <div class={styles.card_grid_img}>
+          <img src={tutor.avatar} alt="Card image" className={styles.img} />
+        </div>
+        <div className={styles.card_grid_info}>
+          <h4 class={styles.card_grid_title}>{tutor.name}</h4>
+          <span className={styles.card_grid_location}>
+            <img className={styles.card_grid_badge} src={tutor.badge} />
+            {tutor.location}
+          </span>
+          <div className={styles.card_grid_certificate}>
+            {tutor.chats && (
+              <div className={styles.info_card}>{tutor.chats}</div>
+            )}
+            {tutor.teacher && (
+              <div className={styles.info_card}>{tutor.teacher}</div>
+            )}
           </div>
         </div>
         <div
-          className={styles.cardHeaderAction}
+          className={styles.card_fav_action}
           onClick={() => {
             onChildClick(tutor);
             setIsFavorite(!isFavorite);
@@ -58,16 +57,16 @@ function tutorsCard({ tutor, onChildClick }) {
           {isFavorite ? "Delete Favorite" : "Add Favorite"}
         </div>
       </div>
-      <div className={styles.cardContent}>
-        <p className={styles.contentText}>{tutor.info}</p>
-      </div>
-      <div className={styles.cardBtnWrapper}>
-        <button
-          className={styles.cardBtn}
-          onClick={() => router.push("/detail/" + tutor.id)}
-        >
-          PROFILE
-        </button>
+      <div className={styles.card_grid_body}>
+        <p className={styles.card_grid_text}>{tutor.info}</p>
+        <div className={styles.card_grid_btn_wrapper}>
+          <button
+            className={styles.card_grid_btn}
+            onClick={() => router.push("/detail/" + tutor.id)}
+          >
+            PROFILE
+          </button>
+        </div>
       </div>
     </div>
   );

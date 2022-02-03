@@ -1,10 +1,17 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
-.videoWrapper {
+.video_wrapper {
   display: flex;
   justify-content: center;
   margin: 30px 0;
   .video {
-    width: 900px;
+    width: 100%;
+    @include media(tablet) {
+      width: 700px;
+    }
+    @include media(wide) {
+      width: 900px;
+    }
   }
 }

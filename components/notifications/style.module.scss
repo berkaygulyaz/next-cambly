@@ -11,7 +11,7 @@
         cursor: pointer;
     }
 
-    .notificationInfo {
+    .notification_info {
         background-color: $color-white;
         display: flex;
         flex-direction: row;
@@ -23,7 +23,7 @@
         z-index: 999;
     }
 
-    .notificationText {
+    .notification_text {
         align-items: flex-start;
         display: flex;
         flex-direction: column;

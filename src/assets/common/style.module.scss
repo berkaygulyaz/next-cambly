@@ -1,5 +1,5 @@
 @import "../common/variables";
-
+@import "../common/mixins";
 
 .detailMain {
   display: flex;
@@ -16,15 +16,27 @@
   height: 400px;
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
 .filterTopWrapper {
   margin-bottom: 20px;
+  display: flex;
 }
 
 .cardsWrapper {
   margin: 30px 0;
+  width: 100%;
+  display: flex;
+  .card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
 
+    @include media(mobil) {
+      margin: 0;
+    }
+  }
   .cards {
     width: 100%;
     display: flex;

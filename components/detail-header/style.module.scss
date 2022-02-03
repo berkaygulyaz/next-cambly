@@ -1,15 +1,24 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
-.tutorInfo {
+.tutor_info {
   border-bottom: 2px solid rgb(238, 238, 238);
   display: flex;
   font-family: $pt-sans;
   height: 70px;
   margin-top: 20px;
   padding-bottom: 10px;
-  width: 900px;
+  width: 100%;
 
-  .tutorInfoDetail {
+  @include media(tablet) {
+    width: 700px;
+  }
+
+  @include media(wide) {
+    width: 900px;
+  }
+
+  .tutor_info_detail {
     display: flex;
     flex-direction: column;
     margin-left: 5px;

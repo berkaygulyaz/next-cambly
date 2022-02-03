@@ -7,11 +7,11 @@
     display: none;
   }
 
-  .calendarIcon {
+  .calendar_icon {
     cursor: pointer;
   }
 
-  .calendarInfo {
+  .calendar_info {
     background-color: $color-white;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@
     z-index: 999;
   }
 
-  .menuTitle {
+  .menu_title {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -35,13 +35,13 @@
     }
   }
 
-  .lessonInfo {
+  .lesson_info {
     display: flex;
     align-items: center;
     margin-top: 20px;
   }
 
-  .lessonDate {
+  .lesson_date {
     color: rgba(0, 0, 0, 0.6);
     font-size: 30px;
     font-weight: lighter;
@@ -67,7 +67,7 @@
     height: auto;
   }
 
-  .teacherInfo {
+  .teacher_info {
     margin-left: 10px;
     span {
       color: rgba(0, 0, 0, 0.6);
@@ -80,7 +80,7 @@
     }
   }
 
-  .scheduleBtn {
+  .schedule_btn {
     align-items: center;
     background: $color-super-silver;
     color: rgba(0, 0, 0, 0.6);

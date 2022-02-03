@@ -5,7 +5,7 @@
   height: 64px;
   border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 
-  .headerWrapper {
+  .header_wrapper {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -14,11 +14,11 @@
     justify-content: space-between;
   }
 
-  .leftSide {
+  .left_side {
     display: flex;
   }
 
-  .rightSide {
+  .right_side {
     display: flex;
     align-items: center;
   }

@@ -8,10 +8,10 @@ import classNames from "classnames";
 
 function FilterTop({ handleKeyUp, status }) {
   return (
-    <div className={styles.filterTop}>
-      <div className={styles.tutorsTab}>
+    <div className={styles.filter_top}>
+      <div className={styles.tutors_tab}>
         <p>Find a Tutor</p>
-        <div className={styles.searchTutorTab}>
+        <div className={styles.search_tutor_tab}>
           <Link href="/">
             <a
               className={classNames({

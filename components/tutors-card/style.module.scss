@@ -1,107 +1,101 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
-.card {
-  margin-bottom: 20px;
-  max-width: 32.5%;
-  min-width: 370px;
-  flex-grow: 1;
+.card_grid {
+  border-radius: 8px;
   border: 1px solid rgb(221, 221, 221);
   box-sizing: border-box;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   font-family: $pt-sans;
-  height: 240px;
-  margin-right: 20px;
-  .cardHeader {
+  height: 220px;
+  margin: 0 10px 20px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  float: left;
+  @include media(tablet) {
+    max-width: 32%;
+    min-width: 351px;
+  }
+}
+.card_grid_header {
+  display: flex;
+  .card_grid_title {
+    margin: 0 0 10px 0;
+    font-size: 19px;
+    color: $color-black;
+  }
+  .img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+
+  .card_grid_info {
     display: flex;
-    flex-direction: row;
-    padding: 16px;
-    .headerAvatar {
-      border-radius: 15px;
-      width: 100px;
-      height: 100px;
-    }
-    .cardheaderContent {
-      flex: 1 1 auto;
-      padding-left: 20px;
-    }
-  }
-  .cardheaderTitle {
-    font-size: 18.5px;
-    line-height: 22px;
-    padding-right: 50px;
-    font-weight: 600;
+    flex-direction: column;
   }
 
-  .subHeader {
-    margin-top: 10px;
-    .badge {
-      height: 32px;
-      width: 32px;
-      margin-right: 5px;
-    }
-    .location {
-      display: flex;
-      align-items: center;
-      font-size: 12px;
-      color: $color-steel-wool;
-    }
-
-    .tutorsSpecialInfo {
-      display: flex;
-    }
-
-    .infoCard {
-      margin-top: 5px;
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 12px;
-      text-overflow: ellipsis;
-      font-size: 10px;
-      margin-right: 5px;
-      background-color: $color-super-silver;
-      color: $color-gray;
-      border-radius: 5px;
-    }
-  }
-
-  .cardContent {
-    margin: 0 15px;
-    height: 40px;
-    p {
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      color: $color-steel-wool;
-      display: -webkit-box;
-      font-size: 14px;
-      margin: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
-  .cardBtnWrapper {
+  .card_grid_location {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    height: 50px;
-    border-bottom-right-radius: inherit;
-    border-bottom-left-radius: inherit;
-    padding: 10px 15px 0;
+    font-size: 14px;
+    .card_grid_badge {
+      width: 30px;
+      margin-right: 5px;
+      color: $color-steel-wool;
+    }
+  }
 
-    .cardBtn {
+  .card_grid_certificate {
+    display: flex;
+    margin-top: 5px;
+    .info_card {
+      margin-right: 5px;
+      padding: 8px 10px;
+      background-color: $color-super-silver;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+  }
+
+  .card_fav_action {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+  }
+}
+.card_grid_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card_grid_text {
+    font-size: 14px;
+    color: $color-gray;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card_grid_btn_wrapper {
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    .card_grid_btn {
+      border: none;
       padding: 8px 20px;
       font-size: 12px;
-      line-height: 1.5;
-      border-radius: 3px;
-      text-decoration: none;
-      color: $color-black;
-      background-color: $color-super-silver;
-      border: none;
+      border-radius: 4px;
       cursor: pointer;
     }
-  }
-
-  .cardHeaderAction {
-    cursor: pointer;
   }
 }

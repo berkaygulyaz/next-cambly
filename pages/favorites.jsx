@@ -22,49 +22,37 @@ function Favorites() {
   };
 
   return (
-    <div>
-      <Layout>
+    <Layout>
+      <main>
         <section className={styles.banner}>
           <Container>
-            <Row>
-              <Col>
-                <Banner />
-              </Col>
-            </Row>
+            <Banner />
           </Container>
         </section>
         <section className={styles.filterTopWrapper}>
           <Container>
-            <Row>
-              <Col>
-                <FilterTop
-                  handleKeyUp={(value) => handleSearch(value)}
-                  status="favorite"
-                />
-              </Col>
-            </Row>
+            <FilterTop
+              handleKeyUp={(value) => handleSearch(value)}
+              status="favorite"
+            />
           </Container>
         </section>
         <section className={styles.cardsWrapper}>
           <Container>
-            <Row>
-              <Col>
-                <div className={styles.cards}>
-                  {favTutors &&
-                    favTutors.map((tutor) => (
-                      <TutorsCard
-                        tutor={tutor}
-                        favTutor={favTutors}
-                        onChildClick={setFavorite}
-                      />
-                    ))}
-                </div>
-              </Col>
-            </Row>
+            <div className={styles.card_wrapper}>
+              {favTutors &&
+                favTutors.map((tutor) => (
+                  <TutorsCard
+                    tutor={tutor}
+                    favTutor={favTutors}
+                    onChildClick={setFavorite}
+                  />
+                ))}
+            </div>
           </Container>
         </section>
-      </Layout>
-    </div>
+      </main>
+    </Layout>
   );
 }
 

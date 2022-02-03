@@ -9,16 +9,17 @@
         cursor: pointer;
     }
 
-    .settingsMenu {
+    .settings_menu {
         background-color: $color-white;
         flex-direction: column;
         left: -160px;
         position: absolute;
         width: 200px;
         z-index: 999;
+        display: flex;
     }
 
-    .menuItem {
+    .menu_item {
         font-size: 14px;
         min-height: auto;
         font-family: inherit;

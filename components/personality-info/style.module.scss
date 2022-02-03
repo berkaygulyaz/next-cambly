@@ -1,7 +1,14 @@
 @import "../../src/assets/common/variables";
+@import "../../src/assets/common/mixins";
 
-.listWrapper {
-  width: 900px;
+.list_wrapper {
+  width: 100%;
+  @include media(tablet) {
+    width: 700px;
+  }
+  @include media(wide) {
+    width: 900px;
+  }
 
   h3 {
     font: bold 25px $pt-sans;

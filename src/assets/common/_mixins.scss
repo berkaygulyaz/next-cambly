@@ -34,7 +34,7 @@
       @content;
     }
   } @else if $point == pre-wide {
-    @media (min-width: 1260px) and (max-width: 1470px) {
+    @media (min-width: 1260px) {
       @content;
     }
   }

@@ -16,31 +16,22 @@ function Header({}) {
   return (
     <header className={styles.header}>
       <ContainerFluid>
-        <Row>
-          <Col>
-            <div className={styles.headerWrapper}>
-              <div className={styles.leftSide}>
-                <Link href="/">
-                  <a className="logo">
-                    <Image
-                      src={Logo}
-                      alt="Cambly Logo"
-                      width={140}
-                      height={40}
-                    />
-                  </a>
-                </Link>
-                <Nav />
-              </div>
-              <div className={styles.rightSide}>
-                <Info />
-                <Notifications />
-                <CalendarInfo />
-                <ProfileButton />
-              </div>
-            </div>
-          </Col>
-        </Row>
+        <div className={styles.header_wrapper}>
+          <div className={styles.left_side}>
+            <Link href="/">
+              <a className="logo">
+                <Image src={Logo} alt="Cambly Logo" width={140} height={40} />
+              </a>
+            </Link>
+            <Nav />
+          </div>
+          <div className={styles.right_side}>
+            <Info />
+            <Notifications />
+            <CalendarInfo />
+            <ProfileButton id={1}/>
+          </div>
+        </div>
       </ContainerFluid>
     </header>
   );

@@ -2,7 +2,7 @@
 @import '../../src/assets/common/mixins';
 
 
-.studentPlanInfo {
+.student_plan_info {
     display: flex;
     height: 100%;
     margin: 0 10px;
@@ -10,7 +10,7 @@
     @include media(mobil) {
         display: none;
     }
-    .shortInfo {
+    .short_info {
         align-items: center;
         display: flex;
         flex-flow: column;
@@ -19,26 +19,26 @@
         font-family: $pt-sans;
     }
 
-    .timeInfo {
+    .time_info {
         color: rgba(0, 0, 0, 0.3);
         font-size: 11px;
         font-weight: 600;
     }
 
-    .lessonMinuteInfo {
+    .lesson_minute_info {
         color: $color-carbon;
         font-size: 16px;
         font-weight: 600;
         margin: 3px 0;
     }
 
-    .lessonSuccessDot {
+    .lesson_success_dot {
         display: flex;
         justify-content: space-evenly;
         width: 100%;
     }
 
-    .lessonDot {
+    .lesson_dot {
         border-radius: 100%;
         border: none;
         height: 10px;
@@ -52,7 +52,7 @@
         margin-left: 10px;
     }
 
-    .infoMenu {
+    .info_menu {
         background: $color-white;
         display: flex;
         flex-direction: column;
@@ -61,20 +61,20 @@
         position: absolute;
         top: 50px;
         z-index: 999;
-        .infoCard {
+        .info_card {
             height: auto;
             margin: 8px;
             padding: 10px;
             width: 300px;
             display: inline-block;
         }
-        .cardTitle {
+        .card_title {
             font-size: 24px;
             font-family: inherit;
             font-weight: 500;
             line-height: 1.334;
         }
-        .leftMinutes {
+        .left_minutes {
             color: rgba(0, 0, 0, 0.6);
             margin: 10px 0;
         }
@@ -87,14 +87,14 @@
             width: 100%;
         }
         
-        .statusText {
+        .status_text {
             display: block;
             margin-top: 5px;
             color: $color-steel-wool;
             font-size: 16px;
         }
 
-        .yourPlan {
+        .your_plan {
             align-items: center;
             border: 1px solid $color-river-fountain;
             display: flex;
@@ -102,19 +102,19 @@
             margin-top: 10px;
             padding: 15px 10px;
 
-            .planTime {
+            .plan_time {
                 color: $color-carbon;
                 font-size: 18px;
                 font-weight: bold;
             }
 
-            .changeBtn {
+            .change_btn {
                 font-size: 11px;
                 color: $color-river-fountain;
             }
         }
 
-        .buyTimes {
+        .buy_times {
             background-color: $color-river-fountain;
             color: $color-white;
             display: flex;

@@ -4,13 +4,17 @@
 .footer {
   width: 100%;
   background-color: $color-super-silver;
+  display: flex;
 
-  .footerWrapper {
+  .footer_wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
     @include media(mobil) {
+      justify-content: center;
+    }
+    @include media(only-tablet) {
       justify-content: center;
     }
   }
@@ -19,9 +23,13 @@
     margin: 0;
   }
 
-  .socialMedia {
+  .social_media {
     display: flex;
     @include media(mobil) {
+      display: none;
+    }
+
+    @include media(only-tablet) {
       display: none;
     }
 

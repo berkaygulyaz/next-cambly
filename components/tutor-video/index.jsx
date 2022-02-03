@@ -3,8 +3,9 @@ import styles from "./style.module.scss";
 
 function Video({ video }) {
   return (
-    <div className={styles.videoWrapper}>
+    <div className={styles.video_wrapper}>
       <iframe
+        className={styles.video}
         width="900"
         height="600"
         src="https://www.youtube.com/embed/9UMxZofMNbA"

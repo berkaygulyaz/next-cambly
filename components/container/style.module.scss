@@ -1,12 +1,23 @@
-@import '../../src/assets/common/mixins';
+@import "../../src/assets/common/mixins";
 
 .container {
-    width: 100%;
-    padding-right: 7.5px;
-    padding-left: 7.5px;
-    margin-right: auto;
-    margin-left: auto;
-    @include media(mobil) {
-        width: 100%;
-    }
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  margin-right: auto;
+  margin-left: auto;
+  @include media(pre-mobil) {
+    width: 540px;
+  }
+  @include media(tablet) {
+    width: 720px;
+  }
+  @include media(web) {
+    width: 1006px;
+  }
+  @include media(wide) {
+    width: 1255px;
+  }
+  @include media(pre-wide) {
+    width: 1481px;
+  }
 }

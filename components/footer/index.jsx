@@ -12,26 +12,24 @@ function footer({}) {
   return (
     <footer className={styles.footer}>
       <Container>
-        <Row>
-          <Col>
-            <div className={styles.footerWrapper}>
-              <FooterNav />
-              <div className={styles.socialMedia}>
-                {CamblyConstants.SOCIAL_MEDIA.map((item) => (
-                  <nav>
-                    <Link href={item.slug}>
-                      <a>
-                        {" "}
-                        <img src={item.icon} />{" "}
-                      </a>
-                    </Link>
-                  </nav>
-                ))}
-              </div>
-              <span className={styles.copyright}>CAMBLY INC. © COPYRIGHT 2021. ALL RIGHTS RESERVED.</span>
-            </div>
-          </Col>
-        </Row>
+        <div className={styles.footer_wrapper}>
+          <FooterNav />
+          <div className={styles.social_media}>
+            {CamblyConstants.SOCIAL_MEDIA.map((item) => (
+              <nav>
+                <Link href={item.slug}>
+                  <a>
+                    {" "}
+                    <img src={item.icon} />{" "}
+                  </a>
+                </Link>
+              </nav>
+            ))}
+          </div>
+          <span className={styles.copyright}>
+            CAMBLY INC. © COPYRIGHT 2021. ALL RIGHTS RESERVED.
+          </span>
+        </div>
       </Container>
     </footer>
   );

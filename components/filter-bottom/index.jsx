@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Col from "../col";
-import Container from "../container";
-import Row from "../row";
 import styles from "./style.module.scss";
 
 function filterBottom({ items, handleFilter, handleFilterField }) {
@@ -31,46 +28,39 @@ function filterBottom({ items, handleFilter, handleFilterField }) {
   };
 
   useEffect(() => {
-    // console.log(isSelectItem);
     handleFilterField(isSelectItem);
   }, [isSelectItem]);
 
   return (
     <div className={styles.filterWrapper}>
-      <Container>
-        <Row>
-          <Col>
-            <div className={styles.filterBottom}>
-              {items.map((item) => (
-                <div className={styles.filterItem}>
-                  <button
-                    className={styles.dropdownBtn}
-                    onClick={() => setIsMenuOpen(item.id)}
-                  >
-                    {item.title}
-                  </button>
-                  {isMenuOpen === item.id && (
-                    <ul className={styles.dropdownList} ref={ref}>
-                      {item.value.map((val) => (
-                        <li className={styles.listItem}>
-                          <input
-                            type="checkbox"
-                            onClick={() => {
-                              setItem(val);
-                              setClickBtn(item.title);
-                            }}
-                          />
-                          <span>{val}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <div className={styles.filterBottom}>
+        {items.map((item) => (
+          <div className={styles.filterItem}>
+            <button
+              className={styles.dropdownBtn}
+              onClick={() => setIsMenuOpen(item.id)}
+            >
+              {item.title}
+            </button>
+            {isMenuOpen === item.id && (
+              <ul className={styles.dropdownList} ref={ref}>
+                {item.value.map((val) => (
+                  <li className={styles.listItem}>
+                    <input
+                      type="checkbox"
+                      onClick={() => {
+                        setItem(val);
+                        setClickBtn(item.title);
+                      }}
+                    />
+                    <span>{val}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

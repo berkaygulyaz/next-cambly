@@ -1,11 +1,11 @@
 @import "../../src/assets/common/variables";
 @import "../../src/assets/common/mixins";
 
-.filterTop {
+.filter_top {
   display: flex;
   justify-content: space-between;
   padding: 25px 0px 10px;
-  .tutorsTab {
+  .tutors_tab {
     display: flex;
     align-items: center;
   }

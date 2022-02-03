@@ -24,38 +24,26 @@ function Home() {
       <Layout>
         <section className={styles.banner}>
           <Container>
-            <Row>
-              <Col>
-                <Banner />
-              </Col>
-            </Row>
+            <Banner />
           </Container>
         </section>
         <section className={styles.filterTopWrapper}>
           <Container>
-            <Row>
-              <Col>
-                <FilterTop
-                  handleKeyUp={(value) => handleSearch(value)}
-                  status="homepage"
-                />
-              </Col>
-            </Row>
+            <FilterTop
+              handleKeyUp={(value) => handleSearch(value)}
+              status="homepage"
+            />
           </Container>
         </section>
-        {/* <section className={styles.cardsWrapper}>
+        <section className={styles.cardsWrapper}>
           <Container>
-            <Row>
-              <Col>
-                <div className={styles.cards}>
-                  {searchTutor.map((tutor) => (
-                    <TutorsCard tutor={tutor} onChildClick={setFavorite} />
-                  ))}
-                </div>
-              </Col>
-            </Row>
+            <div className={styles.card_wrapper}>
+              {searchTutor.map((tutor) => (
+                <TutorsCard tutor={tutor} onChildClick={setFavorite} />
+              ))}
+            </div>
           </Container>
-        </section> */}
+        </section>
       </Layout>
     </main>
   );
