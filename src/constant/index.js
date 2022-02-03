@@ -311,6 +311,31 @@ const CamblyConstants = {
         "Intermediate",
       ],
     },
+    {
+      id: 11,
+      slug: "Marco-K",
+      name: "Marco K",
+      badge: "https://www.cambly.com/static/images/country-flag-icons/US.png",
+      location: "USA",
+      info:
+        "I am open-minded, friendly and talkative and I enjoy discussing topics such as sports, health, eating habits, diet and workout plans. :)",
+      video:
+        "https://d1z2nqdm9ph1g6.cloudfront.net/5e17ec68f0947edbb16370f1/5e17ec68f0947edbb16370f1?Expires=1643820310&Signature=f3x~WvDk1VpITuZWxrTRI0wnzmDoU1k04tGk5ZLL6l4X0y9yTCFh-DQbCVDPx-WZzO3lenpvBfbfE5TWtDVBbvI16TsKdd0wcdN0bnvhD-VevTQIbIjwj7ooPrIORbELNJZA0kcuME6xfaHX8KjOWKcdh0d8jTzzW158F8cBYS9eS6FxlBoIbcDHfrPgX4Db-gGT-W0TRRBo-qRCpvnlGY~tpjOGLgnkatT~7zD~N~BsVyjfIaWy0YMk0IZVWDl32xDQU~jqEm6DJX8iUvTqubuhDdMFPlnOH1cId6qLuGQZ2T6GWLTZaFz2RWF5IWn-uRPxLKHP9voyo7l7FeJc1w__&Key-Pair-Id=APKAIKYVFETQQHXNXQ5Q",
+      avatar:
+        "https://camblyavatars.s3.amazonaws.com/5ded2fb321ddd0fc054edbcds200",
+      about:
+        "I like sports, weightlifting and bodybuilding as well as discussing the benefits of healthy eating and lifestyle. Being a medical student I also enjoy studying medicine, physical therapy, nutritional science, as well as giving advice in meal and workout plans! After many years spent as a student in the field of Health-related studies, I would like to share my experience and knowledge in Detoxification, boosting the immune system, ketogenic diet and many other useful and healthy things!",
+      languages: "English (Native: USA Accent)",
+      chats: "500+ chats",
+      personalInfo: [
+        "North American Accent",
+        "Kind and Patient",
+        "Fun and Gregarious",
+        "Scholarly and Knowledgeable",
+        "Beginner",
+        "Intermediate",
+      ],
+    },
   ],
 
   FILTER: [
